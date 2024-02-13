@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template
-from joblib import load
+import pickle
 
 # Initialize the Flask application
 app = Flask(__name__)
 
 # Load the trained decision tree model
-model = load('../models/decision_tree_model.joblib')
+model = pickle.load(open('./models/decision_tree_model.pkl', 'rb'))
 
 # Assume 'features' contains the list of features expected by the model after encoding
 features = list(X.columns)
