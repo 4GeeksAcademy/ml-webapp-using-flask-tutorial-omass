@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import pickle
-import os
+
 
 # Initialize the Flask application
 app = Flask(__name__)
