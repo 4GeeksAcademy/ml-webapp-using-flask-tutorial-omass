@@ -1,11 +1,13 @@
 from flask import Flask, request, render_template
 import pickle
+import os
 
 # Initialize the Flask application
 app = Flask(__name__)
 
 # Load the trained decision tree model
 model = pickle.load(open('./models/decision_tree_model.pkl', 'rb'))
+
 
 # Update 'features' with the min and max values obtained from Cell 2a
 features_with_ranges = [
