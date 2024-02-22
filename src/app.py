@@ -2,9 +2,6 @@ from flask import Flask, request, render_template
 import pickle
 import os
 
-modelFolder = os.path.join('src', 'model')
-print(modelFolder)
-
 # Initialize the Flask application
 app = Flask(__name__)
 
