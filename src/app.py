@@ -1,6 +1,9 @@
 from flask import Flask, request, render_template
 import pickle
+import os
 
+modelFolder = os.path.join('src', 'model')
+print(modelFolder)
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -9,7 +12,7 @@ app = Flask(__name__)
 model = pickle.load(open('./models/decision_tree_model.pkl', 'rb'))
 
 
-# Update 'features' with the min and max values obtained from Cell 2a
+# Update 'features' with the min and max values obtained 
 features_with_ranges = [
     ('cap-shape', 0, 5), ('cap-surface', 0, 3), ('cap-color', 0, 9), ('bruises', 0, 1), ('odor', 0, 8),
     ('gill-attachment', 0, 1), ('gill-spacing', 0, 1), ('gill-size', 0, 1), ('gill-color', 0, 11),
